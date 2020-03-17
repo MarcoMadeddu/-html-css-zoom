@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* UTILITIES */
+.txt-center{
+  text-align: center;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+#app{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+/* Topbar */
+#top-bar{
+  width: 100%;
+  padding: 12px 15px 25px;
+  font-size: 12px;
+}
+
+#top-bar .partecipants::after{
+  content: "";
+  display: inline-block;
+  border: 4px solid transparent;
+  border-top-color: white;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+
+
+
+
+/* fine topbar */
+
+#main-window{
+  flex-grow: 1;
+  width: 1600px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+#main-window .user{
+  flex-basis: 25%;
+  background-color: #666;
+  border: 3px solid black;
+  position: relative;
+  transition: border .4s;
+}
+
+#main-window .user:hover{
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+#main-window .user img{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main-window .user.active{
+  border-color: green;
+}
+
+#main-window .name,
+#main-window .user i{
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  opacity: 0;
+}
+
+#main-window .user.active .name,
+#main-window .user:not(.active) i{
+  opacity: 1;
+}
+
+/* fine main-window */
+
+/* action bar */
+#action-bar{
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-inline{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-inline a{
+  color: white;
+}
+
+.list-inline li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-inline li:not(:first-child){
+  margin-left: 25px;
+}
+
+.list-inline li i{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.list-inline li span{
+  font-size: 12px;
+}
+
+.end-action a{
+  text-decoration: none;
+  font-size: 14px;
+  color:red;
+}
